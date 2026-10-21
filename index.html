@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinutha | Creative Portfolio</title>
+<meta name="description" content="Vinutha's personal portfolio, skills, education, certificates and projects.">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+  color-scheme: dark;
+  --bg: #070817;
+  --panel: rgba(15,18,43,.88);
+  --cyan: #63efff;
+  --white: #eff4ff;
+  --muted: #a6b1d0;
+  --line: #28335a;
+  --header: rgba(7,8,23,.88);
+  --field: #0b1027;
+  --soft: #131a39;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #090514;
+  --panel: rgba(25,13,42,.9);
+  --cyan: #ff64dc;
+  --white: #fff0ff;
+  --muted: #c0a9d2;
+  --line: #48285e;
+  --header: rgba(9,5,20,.9);
+  --field: #12091f;
+  --soft: #211331;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.7;
+  transition: background-color .25s, color .25s;
+  isolation: isolate;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 16% 18%, rgba(83,53,190,.25), transparent 38%),
+    radial-gradient(ellipse at 84% 34%, color-mix(in srgb, var(--cyan) 17%, transparent), transparent 36%),
+    radial-gradient(ellipse at 50% 88%, rgba(178,43,220,.15), transparent 42%),
+    radial-gradient(1px 1px at 12% 22%, #fff 98%, transparent),
+    radial-gradient(1px 1px at 78% 16%, #c8faff 98%, transparent),
+    radial-gradient(1px 1px at 34% 64%, #fff 98%, transparent),
+    radial-gradient(1px 1px at 91% 73%, #e2caff 98%, transparent),
+    radial-gradient(1px 1px at 62% 42%, #fff 98%, transparent),
+    radial-gradient(1px 1px at 7% 86%, #c8faff 98%, transparent),
+    var(--bg);
+  background-size: auto, auto, auto, 260px 220px, 310px 270px, 350px 300px,
+    290px 240px, 420px 360px, 330px 290px, auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button:focus-visible, a:focus-visible,
+input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 4px;
+}
+
+.container {
+  width: min(1120px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--header);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+
+nav {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font: 700 1.7rem 'Space Grotesk', sans-serif;
+  letter-spacing: -1px;
+}
+
+.theme-btn {
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--white);
+  cursor: pointer;
+  font-size: .82rem;
+  transition: .2s;
+}
+
+.theme-btn:hover { border-color: var(--cyan); color: var(--cyan); }
+
+.logo span, .accent {
+  color: var(--cyan);
+}
+
+.nav-links {
+  display: flex;
+  gap: 23px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: .88rem;
+  color: var(--muted);
+  transition: .25s;
+}
+
+.nav-links a:hover {
+  color: var(--cyan);
+}
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+section {
+  padding: 95px 0;
+  scroll-margin-top: 70px;
+}
+
+.hero {
+  min-height: 84vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 82% 48%, color-mix(in srgb, var(--cyan) 14%, transparent), transparent 42%);
+}
+
+.hero::after {
+  content: "V";
+  position: absolute;
+  right: 2%;
+  top: 8%;
+  font: 700 clamp(17rem, 38vw, 34rem)/1 'Space Grotesk', sans-serif;
+  color: color-mix(in srgb, var(--cyan) 6%, transparent);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+}
+
+.eyebrow {
+  color: var(--cyan);
+  text-transform: uppercase;
+  font-size: .77rem;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.hero h1 {
+  font: 700 clamp(3rem, 8vw, 6.5rem)/1.05 'Space Grotesk', sans-serif;
+  letter-spacing: -4px;
+  margin: 22px 0;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--cyan);
+}
+
+.hero h2 {
+  font: 500 clamp(1.1rem, 3vw, 1.7rem) 'Space Grotesk', sans-serif;
+  color: var(--muted);
+}
+
+.hero p.description {
+  color: var(--muted);
+  max-width: 590px;
+  margin: 22px 0 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 21px;
+  border: 1px solid var(--cyan);
+  border-radius: 5px;
+  background: var(--cyan);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: .9rem;
+  transition: .25s;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--white);
+  border-color: var(--line);
+}
+
+.btn-outline:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font: 700 clamp(2.2rem, 5vw, 3.5rem)/1.2 'Space Grotesk', sans-serif;
+  letter-spacing: -1.5px;
+  margin-top: 9px;
+}
+
+.section-heading p:last-child {
+  color: var(--muted);
+  margin-top: 12px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.panel h3 {
+  font: 600 1.4rem 'Space Grotesk', sans-serif;
+  margin-bottom: 13px;
+}
+
+.panel p {
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.quote {
+  border-left: 3px solid var(--cyan);
+  padding-left: 17px;
+  font: 500 1.4rem/1.5 'Space Grotesk', sans-serif;
+  margin-top: 22px;
+}
+
+.fact {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.fact:last-child {
+  border-bottom: none;
+}
+
+.fact strong {
+  display: block;
+  color: var(--cyan);
+  font-size: .77rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.fact span {
+  color: var(--white);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.skill-group h3 {
+  font: 600 1.3rem 'Space Grotesk', sans-serif;
+  margin-bottom: 20px;
+}
+
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill {
+  padding: 12px 17px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--soft);
+  transition: .25s;
+}
+
+.skill:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  transform: translateY(-3px);
+}
+
+.skill small {
+  display: block;
+  font-size: .7rem;
+  color: var(--muted);
+}
+
+.education-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.edu-item {
+  border-left: 2px solid var(--cyan);
+  background: var(--panel);
+  border-radius: 0 10px 10px 0;
+  padding: 24px;
+}
+
+.edu-item .year {
+  color: var(--cyan);
+  font-size: .8rem;
+  letter-spacing: 1px;
+}
+
+.edu-item h3 {
+  margin: 8px 0;
+  font: 600 1.3rem 'Space Grotesk', sans-serif;
+}
+
+.edu-item p {
+  color: var(--muted);
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .25s, border-color .25s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--cyan);
+}
+
+.card-content {
+  padding: 22px;
+}
+
+.card h3 {
+  font: 600 1.15rem 'Space Grotesk', sans-serif;
+  margin-bottom: 9px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: .9rem;
+  margin-bottom: 17px;
+}
+
+.card-art {
+  min-height: 145px;
+  background:
+    radial-gradient(circle at 75% 25%, color-mix(in srgb, var(--cyan) 22%, transparent), transparent 40%),
+    var(--soft);
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  color: var(--cyan);
+  font: 700 2.8rem 'Space Grotesk', sans-serif;
+}
+
+.card-art img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-art.has-image {
+  display: block;
+}
+
+.card-art.has-image img {
+  height: 180px;
+}
+
+.card-label {
+  font-size: .72rem;
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 8px;
+}
+
+.card-link {
+  display: inline-block;
+  margin-top: 4px;
+  color: var(--cyan);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+.project-number {
+  display: flex;
+  justify-content: space-between;
+  color: var(--cyan);
+  font-size: .78rem;
+  margin-bottom: 12px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 15px 0;
+}
+
+.tags span {
+  font-size: .72rem;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--muted);
+}
+
+.project-btn {
+  display: inline-block;
+  margin-top: 8px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 25px;
+}
+
+.contact-item {
+  margin-top: 22px;
+  overflow-wrap: anywhere;
+}
+
+.contact-item strong {
+  display: block;
+  color: var(--cyan);
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.contact-item a {
+  color: var(--white);
+}
+
+.contact-item a:hover {
+  color: var(--cyan);
+}
+
+form label {
+  display: block;
+  margin: 14px 0 7px;
+  font-size: .88rem;
+}
+
+form input, form textarea {
+  width: 100%;
+  background: var(--field);
+  border: 1px solid var(--line);
+  color: var(--white);
+  padding: 13px;
+  border-radius: 6px;
+  outline: none;
+}
+
+form input:focus, form textarea:focus {
+  border-color: var(--cyan);
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+form button {
+  margin-top: 18px;
+}
+
+#form-status {
+  margin-top: 12px;
+  color: var(--cyan);
+  overflow-wrap: anywhere;
+}
+
+footer {
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: .85rem;
+  text-align: center;
+}
+
+/* Gallery-inspired artwork wall */
+footer .logo {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .menu-btn {
+    display: block;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    padding: 14px 0;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 10px 0;
+  }
+
+  .theme-btn { margin-left: auto; }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links a {
+    display: block;
+    padding: 10px 0;
+  }
+
+  .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+@media (max-width: 560px) {
+  section {
+    padding: 68px 0;
+  }
+
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero h1 {
+    letter-spacing: -2px;
+  }
+
+  .skills-grid, .education-list, .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    padding: 22px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container" aria-label="Main navigation">
+    <a href="#home" class="logo">V<span>.</span></a>
+
+    <button class="theme-btn" id="theme-btn" type="button"
+      aria-label="Switch to dark mode" aria-pressed="false">☾ Dark</button>
+
+    <button class="menu-btn" id="menu-btn"
+      aria-label="Open navigation" aria-expanded="false"
+      aria-controls="nav-links">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certificates">Certificates</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- HOME -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <p class="eyebrow">MY DIGITAL SPACE · 01</p>
+      <h1>Not here to fit in.<br>Here to <span>build.</span></h1>
+      <h2>Hi, I'm Vinutha — Aspiring Developer.</h2>
+      <p class="description">
+        Curious mind. Creative thinker. Future developer.
+        I turn ideas into digital experiences, one line of code at a time.
+        This is where my learning meets my imagination.
+      </p>
+      <div class="buttons">
+        <a class="btn" href="#projects">Explore my work ↗</a>
+        <a class="btn btn-outline" href="#contact">Let's connect</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">02 / BEHIND THE CODE</p>
+        <h2>A little about <span class="accent">me.</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="panel">
+          <h3>I'm Vinutha. I learn by creating.</h3>
+          <p>
+            I believe every great developer starts with curiosity
+            and grows through experimentation. I'm exploring the world
+            of web development, discovering how small ideas can become
+            meaningful digital experiences.
+          </p>
+          <p>
+            I don't need to know everything today. I just need to keep
+            learning, keep building, and be better than I was yesterday.
+          </p>
+          <div class="quote">
+            "My journey is still being written — and every project is a new chapter."
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Quick introduction</h3>
+          <div class="fact">
+            <strong>Currently</strong>
+            <span>Learning & building projects</span>
+          </div>
+          <div class="fact">
+            <strong>Interested in</strong>
+            <span>Web development & technology</span>
+          </div>
+          <div class="fact">
+            <strong>My approach</strong>
+            <span>Curiosity over perfection</span>
+          </div>
+          <div class="fact">
+            <strong>My goal</strong>
+            <span>Turn knowledge into real-world skills</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">03 / MY TOOLKIT</p>
+        <h2>Skills I'm <span class="accent">building.</span></h2>
+        <p>Technologies I'm learning and working with.</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="panel skill-group">
+          <h3><span class="accent">01.</span> Frontend Development</h3>
+          <div class="skill-list">
+            <div class="skill">HTML <small>Structure</small></div>
+            <div class="skill">CSS <small>Design</small></div>
+            <div class="skill">JavaScript <small>Interaction</small></div>
+          </div>
+        </div>
+
+        <div class="panel skill-group">
+          <h3><span class="accent">02.</span> Backend Development</h3>
+          <div class="skill-list">
+            <div class="skill">Python <small>Programming</small></div>
+            <div class="skill">Java <small>Programming</small></div>
+            <div class="skill">SQL <small>Databases</small></div>
+            <div class="skill">PHP <small>Server-side</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">04 / THE FOUNDATION</p>
+        <h2>Learning is a <span class="accent">journey.</span></h2>
+      </div>
+
+      <div class="education-list">
+        <article class="edu-item">
+          <span class="year">DEGREE</span>
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <p>SVRFGC College</p>
+        </article>
+
+        <article class="edu-item">
+          <span class="year">ONGOING</span>
+          <h3>Skills Learning</h3>
+          <p>Continuously learning and developing technical skills.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section id="certificates">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">05 / MILESTONES</p>
+        <h2>Proof of <span class="accent">progress.</span></h2>
+        <p>Every certificate represents an experience and a lesson.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <!-- Replace certificate-images/nss-2023.jpg with your image path -->
+          <a href="./nss.png"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-art has-image">
+              <img src=".\nss.png"
+                alt="NSS 2023 certificate"
+                onerror="this.parentElement.classList.remove('has-image');this.remove();this.parentElement.textContent='NSS';">
+            </div>
+          </a>
+          <div class="card-content">
+            <div class="card-label">Certificate · 2023</div>
+            <h3>NSS</h3>
+            <p>National Service Scheme certificate.</p>
+            <a class="card-link"
+              href="./nss.png"
+              target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Replace certificate-images/skills-development-2024.jpg -->
+          <a href=".\skills.png"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-art has-image">
+              <img src=".\skills.png"
+                alt="Skills Development 2024 certificate"
+                onerror="this.parentElement.classList.remove('has-image');this.remove();this.parentElement.textContent='SKILLS';">
+            </div>
+          </a>
+          <div class="card-content">
+            <div class="card-label">Certificate · 2024</div>
+            <h3>Skills Development</h3>
+            <p>Skills development training certificate.</p>
+            <a class="card-link"
+              href=".\skills.png"
+              target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <!-- Replace certificate-images/soft-skills-2024.jpg -->
+          <a href=".\soft skills.png"
+             target="_blank" rel="noopener noreferrer">
+            <div class="card-art has-image">
+              <img src=".\soft skills.png"
+                alt="Soft Skill Training 2024 certificate"
+                onerror="this.parentElement.classList.remove('has-image');this.remove();this.parentElement.textContent='SOFT SKILLS';">
+            </div>
+          </a>
+          <div class="card-content">
+            <div class="card-label">Certificate · 2024</div>
+            <h3>Soft Skill Training</h3>
+            <p>Soft skills training certificate.</p>
+            <a class="card-link"
+              href="\soft skills.png"
+              target="_blank" rel="noopener noreferrer">View Certificate ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">06 / THINGS I'VE CREATED</p>
+        <h2>Small projects. <span class="accent">Big learning.</span></h2>
+        <p>Replace the demo links below with your actual project URLs.</p>
+      </div>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-art">01 / ±</div>
+          <div class="card-content">
+            <h3>Simple Calculator</h3>
+            <p>A simple calculator for performing basic arithmetic operations.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="btn project-btn" href="./cal.html"
+               target="_blank" rel="noopener noreferrer">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-art">02 / FIT</div>
+          <div class="card-content">
+            <h3>Fitness Product Shop</h3>
+            <p>A fitness-themed shopping website showcasing products.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+            <a class="btn project-btn" href="https://github.com/Vinutha152006/vinuthas/blob/main/app.py"
+               target="_blank" rel="noopener noreferrer">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-art">03 / CV</div>
+          <div class="card-content">
+            <h3>Simple Resume</h3>
+            <p>A clean resume webpage presenting personal and professional details.</p>
+            <div class="tags"><span>HTML</span><span>CSS</span></div>
+            <a class="btn project-btn" href="./resume.html"
+               target="_blank" rel="noopener noreferrer">View Project ↗</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-art">04 / DB</div>
+          <div class="card-content">
+            <h3>Students Management System</h3>
+            <p>A project concept for organizing and managing student records.</p>
+            <div class="tags"><span>Python</span><span>SQL</span><span>Database</span></div>
+            <a class="btn project-btn" href="./student.html"
+               target="_blank" rel="noopener noreferrer">View Project ↗</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">07 / THE NEXT CHAPTER</p>
+        <h2>Let's make something <span class="accent">meaningful.</span></h2>
+        <p>Have an opportunity, an idea, or just want to connect? Say hello.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="panel">
+          <h3>Find me online.</h3>
+          <p>I'm always open to learning, connecting and exploring new opportunities.</p>
+
+          <div class="contact-item">
+            <strong>Email</strong>
+            <a href="mailto:vinuthasvinu632@gmail.com">vinuthasvinu632@gmail.com</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>GitHub</strong>
+            <!-- Replace YOUR-GITHUB-USERNAME with your actual username -->
+            <a href="https://github.com/Vinutha152006"
+              target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a>
+          </div>
+
+          <div class="contact-item">
+            <strong>Location</strong>
+            <span>India</span>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>Send me a message.</h3>
+          <form id="contact-form">
+            <label for="name">Your name</label>
+            <input type="text" id="name" name="name"
+              placeholder="Enter your name" required>
+
+            <label for="email">Your email</label>
+            <input type="email" id="email" name="email"
+              placeholder="Enter your email" required>
+
+            <label for="message">Your message</label>
+            <textarea id="message" name="message"
+              placeholder="What's on your mind?" required></textarea>
+
+            <button type="submit" class="btn">Prepare Email ↗</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#home" class="logo">V<span>.</span></a>
+    <p>Designed with curiosity. Built with code.</p>
+    <p>© <span id="year"></span> Vinutha. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Mobile navigation
+  const menuBtn = document.getElementById('menu-btn');
+  const navLinks = document.getElementById('nav-links');
+  const themeBtn = document.getElementById('theme-btn');
+
+  // Theme preference
+  const savedTheme = localStorage.getItem('vinutha-theme');
+  if (savedTheme === 'dark') document.documentElement.dataset.theme = 'dark';
+  const updateThemeButton = () => {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    themeBtn.textContent = isDark ? '☀ Light' : '☾ Dark';
+    themeBtn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeBtn.setAttribute('aria-pressed', String(isDark));
+  };
+  updateThemeButton();
+  themeBtn.addEventListener('click', () => {
+    const isDark = document.documentElement.dataset.theme !== 'dark';
+    document.documentElement.dataset.theme = isDark ? 'dark' : 'light';
+    localStorage.setItem('vinutha-theme', isDark ? 'dark' : 'light');
+    updateThemeButton();
+  });
+
+  menuBtn.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', isOpen);
+    menuBtn.setAttribute('aria-label',
+      isOpen ? 'Close navigation' : 'Open navigation');
+    menuBtn.textContent = isOpen ? '✕' : '☰';
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+      menuBtn.setAttribute('aria-label', 'Open navigation');
+      menuBtn.textContent = '☰';
+    });
+  });
+
+  // Automatically update copyright year
+  document.getElementById('year').textContent =
+    new Date().getFullYear();
+
+  // Reveal sections when they enter the viewport
+  const revealItems = document.querySelectorAll(
+    '.section-heading, .panel, .edu-item, .card, .skill-group'
+  );
+
+  if ('IntersectionObserver' in window &&
+      !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    revealItems.forEach(item => item.classList.add('reveal'));
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+  }
+
+  // Contact form: prepare an email in the visitor's email app
+  const form = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    if (!name || !email || !message) return;
+
+    const subject = encodeURIComponent(
+      'Portfolio enquiry from ' + name
+    );
+    const body = encodeURIComponent(
+      'Name: ' + name + '\nEmail: ' + email +
+      '\n\nMessage:\n' + message
+    );
+
+    formStatus.textContent =
+      'Opening your email app. Please send the prepared message there.';
+
+    window.location.href =
+      'mailto:vinuthasvinu632@gmail.com?subject=' +
+      subject + '&body=' + body;
+  });
+</script>
+
+</body>
+</html>
